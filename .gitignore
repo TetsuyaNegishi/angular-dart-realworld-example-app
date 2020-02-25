@@ -4,3 +4,6 @@
 .pub/
 build/
 node_modules
+
+cypress/videos
+cypress/screenshots
