@@ -11,7 +11,7 @@
       "author": {
         "username": "user1",
         "bio": null,
-        "image": "",
+        "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
         "following": false
       },
       "favorited": false,
@@ -28,7 +28,7 @@
       "author": {
         "username": "user2",
         "bio": null,
-        "image": "",
+        "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
         "following": false
       },
       "favorited": false,

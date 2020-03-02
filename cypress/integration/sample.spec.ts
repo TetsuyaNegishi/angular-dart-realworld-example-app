@@ -25,6 +25,12 @@ describe("Top Page", () => {
           "have.text",
           "user1"
         );
+
+        cy.get('[data-test="knowledge-author-image"]').should(
+          "have.attr",
+          "src",
+          "https://static.productionready.io/images/smiley-cyrus.jpg"
+        )
       });
     });
   });

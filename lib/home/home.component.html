@@ -8,6 +8,7 @@
           data-test="knowledge"
         >
           <div class="article-meta">
+            <img [src]="article.author.image" data-test="knowledge-author-image" />
             <div class="info">
               <a class="author" data-test="knowledge-author-name">
                 {{ article.author.username }}
