@@ -8,9 +8,19 @@ describe("Top Page", () => {
   });
   context("Global Feed", () => {
     it("ユーザは投稿されたナレッジを見ることができる", () => {
-      cy.get('[data-test="knowledge"] [data-test="knowledge-title"]')
-        .eq(0)
-        .should("have.text", "articles title1");
+      const firstKnowledge = cy.get('[data-test="knowledge"]').eq(0);
+
+      firstKnowledge.within(() => {
+        cy.get('[data-test="knowledge-title"]').should(
+          "have.text",
+          "articles title1"
+        );
+
+        cy.get('[data-test="knowledge-description"]').should(
+          "have.text",
+          "articles title1 description"
+        );
+      });
     });
   });
 });
