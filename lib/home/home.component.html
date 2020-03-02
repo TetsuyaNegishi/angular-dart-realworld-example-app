@@ -2,11 +2,16 @@
   <div class="container page">
     <div class="row">
       <div class="col-md-9">
-        <p *ngFor="let article of articles" data-test="knowledge">
-          <span data-test="knowledge-title">{{article.title}}</span>
-          {{article.body}}
-        </p>
-        <!-- <app-article-list [limit]="10" [config]="listConfig"></app-article-list> -->
+        <div
+          *ngFor="let article of articles"
+          class="article-preview"
+          data-test="knowledge"
+        >
+          <a class="preview-link">
+            <h1 data-test="knowledge-title">{{ article.title }}</h1>
+            {{ article.body }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
