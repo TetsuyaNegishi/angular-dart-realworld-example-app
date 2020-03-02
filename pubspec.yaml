@@ -6,6 +6,7 @@ environment:
   sdk: '>=2.2.0 <3.0.0'
 
 dependencies:
+  http: ^0.12.0
   angular: ^6.0.0-alpha
 
 dev_dependencies:
