@@ -20,6 +20,11 @@ describe("Top Page", () => {
           "have.text",
           "articles title1 description"
         );
+
+        cy.get('[data-test="knowledge-author-name"]').should(
+          "have.text",
+          "user1"
+        );
       });
     });
   });

@@ -7,6 +7,14 @@
           class="article-preview"
           data-test="knowledge"
         >
+          <div class="article-meta">
+            <div class="info">
+              <a class="author" data-test="knowledge-author-name">
+                {{ article.author.username }}
+              </a>
+            </div>
+          </div>
+
           <a class="preview-link">
             <h1 data-test="knowledge-title">{{ article.title }}</h1>
             <p data-test="knowledge-description">{{ article.description }}</p>
