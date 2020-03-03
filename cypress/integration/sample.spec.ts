@@ -36,6 +36,13 @@ describe("Top Page", () => {
           "have.text",
           "February 26, 2020"
         );
+
+        cy.get('[data-test="knowledge-tag"]').should(($tag) => {
+          expect($tag).to.have.length(3);
+          expect($tag[0]).to.have.text("tag1");
+          expect($tag[1]).to.have.text("tag2");
+          expect($tag[2]).to.have.text("tag3");
+        });
       });
     });
   });

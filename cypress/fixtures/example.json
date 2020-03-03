@@ -6,7 +6,7 @@
       "body": "articles title1 body",
       "createdAt": "2020-02-26T11:29:02.981Z",
       "updatedAt": "2020-02-26T11:29:02.981Z",
-      "tagList": [],
+      "tagList": ["tag1", "tag2", "tag3"],
       "description": "articles title1 description",
       "author": {
         "username": "user1",

@@ -8,18 +8,33 @@
           data-test="knowledge"
         >
           <div class="article-meta">
-            <img [src]="article.author.image" data-test="knowledge-author-image" />
+            <img
+              [src]="article.author.image"
+              data-test="knowledge-author-image"
+            />
             <div class="info">
               <a class="author" data-test="knowledge-author-name">
                 {{ article.author.username }}
               </a>
-              <span class="date" data-test="knowledge-date">{{article.createdAt | date: 'longDate' }}</span>
+              <span class="date" data-test="knowledge-date">{{
+                article.createdAt | date: "longDate"
+              }}</span>
             </div>
           </div>
 
           <a class="preview-link">
             <h1 data-test="knowledge-title">{{ article.title }}</h1>
             <p data-test="knowledge-description">{{ article.description }}</p>
+            <span>Read more...</span>
+            <ul class="tag-list">
+              <li
+                class="tag-default tag-pill tag-outline"
+                *ngFor="let tag of article.tagList"
+                data-test="knowledge-tag"
+              >
+                {{ tag }}
+              </li>
+            </ul>
           </a>
         </div>
       </div>
