@@ -14,11 +14,11 @@ class ArticlesService {
   Future<List<Article>> getAll() async {
     try {
       final response = await _http.get(_url);
-      print(_extractArticles(response));
-      final heroes = (_extractArticles(response) as List)
+
+      final articles = (_extractArticles(response) as List)
           .map((json) => Article.fromJson(json))
           .toList();
-      return heroes;
+      return articles;
     } catch (e) {
       throw _handleError(e);
     }
