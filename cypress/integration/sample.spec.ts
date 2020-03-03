@@ -1,9 +1,11 @@
 const example = require("../fixtures/example.json");
+const tags = require("../fixtures/tags.json")
 
 describe("Top Page", () => {
   before(() => {
     cy.server();
     cy.route("GET", "**/articles?*", example);
+    cy.route("GET", "**/tags", tags);
     cy.visit("/");
   });
   context("Global Feed", () => {
@@ -44,6 +46,14 @@ describe("Top Page", () => {
           expect($tag[2]).to.have.text("tag3");
         });
       });
+    });
+
+    it("ユーザは投稿されたタグの一覧を見ることができる", () => {
+      const tagList = cy.get('[data-test="tag-list"]');
+      tagList.should('exist');
+      tagList.should('contain', 'tag1');
+      tagList.should('contain', 'tag2');
+      tagList.should('contain', 'tag3');
     });
   });
 });

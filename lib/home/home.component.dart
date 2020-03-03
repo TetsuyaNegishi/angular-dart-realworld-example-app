@@ -4,6 +4,7 @@ import 'package:angular/angular.dart';
 
 import '../models/article.model.dart';
 import '../services/articles_service.dart';
+import '../services/tags_service.dart';
 
 @Component(
   selector: 'app-home-page',
@@ -13,13 +14,23 @@ import '../services/articles_service.dart';
 )
 class HomeComponent implements OnInit {
   final ArticlesService _articleService;
-  List<Article> articles;
+  final TagsService _tagsService;
 
-  HomeComponent(this._articleService);
+  List<Article> articles;
+  List<String> tags;
+
+  HomeComponent(this._articleService, this._tagsService);
 
   Future<void> _getArticles() async {
     articles = await _articleService.getAll();
   }
 
-  void ngOnInit() => _getArticles();
+  Future<void> _getTags() async {
+    tags = await _tagsService.getAll();
+  }
+
+  void ngOnInit() {
+    _getArticles();
+    _getTags();
+  }
 }

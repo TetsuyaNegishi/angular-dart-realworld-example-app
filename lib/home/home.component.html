@@ -38,6 +38,19 @@
           </a>
         </div>
       </div>
+      <div class="col-md-3">
+        <div class="sidebar">
+          <p>Popular Tags</p>
+          <div class="tag-list" data-test="tag-list">
+            <a
+              class="tag-default tag-pill"
+              *ngFor="let tag of tags"
+            >
+              {{ tag }}
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
