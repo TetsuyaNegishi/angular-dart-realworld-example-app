@@ -9,6 +9,7 @@ import '../services/articles_service.dart';
   selector: 'app-home-page',
   templateUrl: './home.component.html',
   directives: [coreDirectives],
+  pipes: [commonPipes],
 )
 class HomeComponent implements OnInit {
   final ArticlesService _articleService;

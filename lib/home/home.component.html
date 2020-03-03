@@ -13,6 +13,7 @@
               <a class="author" data-test="knowledge-author-name">
                 {{ article.author.username }}
               </a>
+              <span class="date" data-test="knowledge-date">{{article.createdAt | date: 'longDate' }}</span>
             </div>
           </div>
 

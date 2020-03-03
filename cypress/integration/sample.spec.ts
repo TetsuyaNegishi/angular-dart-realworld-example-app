@@ -30,7 +30,12 @@ describe("Top Page", () => {
           "have.attr",
           "src",
           "https://static.productionready.io/images/smiley-cyrus.jpg"
-        )
+        );
+
+        cy.get('[data-test="knowledge-date"]').should(
+          "have.text",
+          "February 26, 2020"
+        );
       });
     });
   });
