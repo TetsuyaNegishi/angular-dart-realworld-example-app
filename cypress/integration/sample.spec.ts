@@ -55,5 +55,10 @@ describe("Top Page", () => {
       tagList.should('contain', 'tag2');
       tagList.should('contain', 'tag3');
     });
+
+    it("ログインしていないユーザはトップページにアクセスしたときGlobalFeedが選択されている", () => {
+      const globalFeedTab = cy.get('[data-test="global-feed-tab"]');
+      globalFeedTab.should('have.class', 'active');
+    });
   });
 });

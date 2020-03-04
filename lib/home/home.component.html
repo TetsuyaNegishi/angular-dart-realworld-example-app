@@ -2,16 +2,19 @@
   <div class="container page">
     <div class="row">
       <div class="col-md-9">
-        <div
-          *ngFor="let article of articles"
-          class="article-preview"
-          data-test="knowledge"
-        >
+        <div class="feed-toggle">
+          <ul class="nav nav-pills outline-active">
+            <li class="nav-item">
+              <a href="" class="nav-link active" data-test="global-feed-tab">
+                Global Feed
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div *ngFor="let article of articles" class="article-preview" data-test="knowledge">
           <div class="article-meta">
-            <img
-              [src]="article.author.image"
-              data-test="knowledge-author-image"
-            />
+            <img [src]="article.author.image" data-test="knowledge-author-image" />
             <div class="info">
               <a class="author" data-test="knowledge-author-name">
                 {{ article.author.username }}
@@ -27,11 +30,8 @@
             <p data-test="knowledge-description">{{ article.description }}</p>
             <span>Read more...</span>
             <ul class="tag-list">
-              <li
-                class="tag-default tag-pill tag-outline"
-                *ngFor="let tag of article.tagList"
-                data-test="knowledge-tag"
-              >
+              <li class="tag-default tag-pill tag-outline" *ngFor="let tag of article.tagList"
+                data-test="knowledge-tag">
                 {{ tag }}
               </li>
             </ul>
@@ -42,10 +42,7 @@
         <div class="sidebar">
           <p>Popular Tags</p>
           <div class="tag-list" data-test="tag-list">
-            <a
-              class="tag-default tag-pill"
-              *ngFor="let tag of tags"
-            >
+            <a class="tag-default tag-pill" *ngFor="let tag of tags">
               {{ tag }}
             </a>
           </div>
